@@ -38,18 +38,18 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
   end
 
-  test "login with remembering" do
-    log_in_as(@user, remember_me: '1')
-    assert_equal （コードを書き込む）, assigns(:user).（コードを書き込む）
-  end
+  # test "login with remembering" do
+  #   log_in_as(@user, remember_me: '1')
+  #   assert_equal （コードを書き込む）, assigns(:user).（コードを書き込む）
+  # end
 
-  test "login without remembering" do
-    # クッキーを保存してログイン
-    log_in_as(@user, remember_me: '1')
-    delete logout_path
-    # クッキーを削除してログイン
-    log_in_as(@user, remember_me: '0')
-    assert_empty cookies['remember_token']
-  end
+  # test "login without remembering" do
+  #   # クッキーを保存してログイン
+  #   log_in_as(@user, remember_me: '1')
+  #   delete logout_path
+  #   # クッキーを削除してログイン
+  #   log_in_as(@user, remember_me: '0')
+  #   assert_empty cookies['remember_token']
+  # end
   
 end
