@@ -40,7 +40,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
   test "login with remembering" do
     log_in_as(@user, remember_me: '1')
-    assert_not_empty cookies['remember_token']
+    assert_equal （コードを書き込む）, assigns(:user).（コードを書き込む）
   end
 
   test "login without remembering" do
