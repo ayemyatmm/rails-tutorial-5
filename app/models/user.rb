@@ -2,6 +2,7 @@ class User < ApplicationRecord
     attr_accessor :remember_token, :activation_token, :reset_token
     before_save   :downcase_email
     before_create :create_activation_digest
+
     validates :name,  presence: true, length: { maximum: 50 }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, length: { maximum: 255 },
@@ -52,8 +53,7 @@ class User < ApplicationRecord
     # パスワード再設定の属性を設定する
     def create_reset_digest
         self.reset_token = User.new_token
-        update_attribute(:reset_digest,  User.digest(reset_token))
-        update_attribute(:reset_sent_at, Time.zone.now)
+        update_columns(reset_digest:  （コードを書き込む）, reset_sent_at: （コードを書き込む）)
     end
 
     # パスワード再設定のメールを送信する
